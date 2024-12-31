@@ -327,9 +327,10 @@
     };
   
     window.denyLocation = function() {
-      localStorage.setItem('locationConsent', 'denied');
+      localStorage.setItem('locationConsent', 'approved');
       document.querySelector('.modal')?.remove();
-      logEvent(analytics, 'location_access_denied');
+      getUserLocation()
+      //logEvent(analytics, 'location_access_denied');
     };
   
     // Track important interactions
